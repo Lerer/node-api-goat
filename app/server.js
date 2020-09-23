@@ -3,7 +3,6 @@ var serialize = require('node-serialize');
 var cprocess = require('child_process');
 var libxmljs = require('libxmljs');
 var fse = require("fs-extra");
-const path = require('path')
 
 var app = express();
 
@@ -51,7 +50,7 @@ app.get("/hexToRgb", function(req, res) {
 // Exploit URL: http://localhost:3000/cwe73/read?foo=package.json
 // Status:      PASS
 app.get("/cwe73/read", function(req, res) {
-  res.send(fse.readJsonSync(__dirname+path.sep+'..'+path.sep+req.query.foo));
+  res.send(fse.readJsonSync(req.query.foo));
 });
 
 // Id:          CWE-79
