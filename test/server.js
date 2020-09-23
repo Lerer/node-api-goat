@@ -5,7 +5,7 @@ const should = chai.should();
 var  request = require('supertest');
 
 describe("node-api-goat API test", function () {
-  this.timeout(25000);
+  this.timeout(120000);
 
   var server;
   before(function () {
