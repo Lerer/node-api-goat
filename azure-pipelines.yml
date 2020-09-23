@@ -12,7 +12,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '8.x'
+    versionSpec: '12.x'
   displayName: 'Install Node.js'
 
 - script: |
@@ -22,3 +22,7 @@ steps:
 - script: |
     npm test
   displayName: 'Test'
+
+- script: |
+    npm test-iast
+  displayName: 'IAST'
